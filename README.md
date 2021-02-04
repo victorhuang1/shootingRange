@@ -1,4 +1,5 @@
-# Front-end shooting range，practise shooting skills everyday. Thanks to Mr. Leo, the leader of front-end technology.
+# Front-end shooting range，practise shooting skills everyday. 
+Thanks to Mr. Leo, the leader and my teacher of front-end technology.
 
 ## Javascript
 
