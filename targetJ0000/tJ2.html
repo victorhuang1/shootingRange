@@ -1,0 +1,21 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>shootingRange</title>
+    <script type="text/javascript">
+        //functions are nested in each other;
+        function targetJOne(){
+            alert(1);
+            targetJTwo();
+        };
+        function targetJTwo(){
+            alert(2);
+            targetJOne();
+        }
+        targetJOne();
+    </script>
+</head>
+<body>
+</body>
+</html>
