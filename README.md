@@ -3,8 +3,8 @@ Thanks to Mr. Leo, the leader and my teacher of front-end technology.
 
 ## Javascript
 
-**targetJ0000 ：** Infinite repeat popover
-    A function is nested and call itself, or two functions are nested and call each other.
+**targetJ0000 ：** Infinite repeat popover  
+A function is nested and call itself, or two functions are nested and call each other.
 
 **targetJ0001 ：** The correct value is obtained after comment
 
