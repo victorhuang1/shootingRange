@@ -1,0 +1,23 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title>
+</head>
+<body>
+	<div id='setDiv'></div>
+	<script type="text/javascript">
+		var oLeft,oRight,oTop,oBottom = 0;
+		setInterval(function(){
+			oLeft = screenLeft;
+			oTop = screenTop;
+			oRight = screen.width - (oLeft + innerWidth);
+            //72 is a compensation for my Windows10, other OS may vary;
+			oBottom = screen.height - (oTop + innerHeight+72);
+			setDiv.innerHTML = 'Browser to the left'+oLeft+'pixels,browser to the right'+oRight+'pixels,browser to the top'+oTop+'pixels,browser to the bottom'+oBottom+'pixels';
+		},0);
+		
+	
+	</script>
+</body>
+</html>

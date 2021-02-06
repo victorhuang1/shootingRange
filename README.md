@@ -11,6 +11,8 @@ A function is nested and call itself, or two functions are nested and call each 
 **targetJ0002 ：** How to make your visit volume reach 1W quickly? 
 
 **targetJ0003 ：** How to get the distance between the browser and the screen?
+Control the four variables to get the desired effect. 
+Tips: Use screen.width, screen.height, screenLeft, screenTop, innerWidth, innerHeight.
 
 **targetJ0004 ：** Shopping gadgets Can you stop at 100? 
 
