@@ -13,6 +13,13 @@ A function is nested and call itself, or two functions are nested and call each 
 **targetJ0003 ：** How to get the distance between the browser and the screen?
 Control the four variables to get the desired effect. 
 Tips: Use screen.width, screen.height, screenLeft, screenTop, innerWidth, innerHeight.
+    window.screenY and window.screenTop both return the same result
+    window.screenX and window.screenLeft both return the same result
+    But IE <= 8 doesnt support window.screenY and window.screenX.
+    Firefox doesnt support window.screenTop and window.screenLeft.
+    Use conditionally for browser compatibility like this
+    var winTop = window.screenTop ? window.screenTop : window.screenY;
+    var winLeft = window.screenLeft ? window.screenLeft : window.screenX;
 
 **targetJ0004 ：** Shopping gadgets Can you stop at 100? 
 
