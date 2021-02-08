@@ -1,0 +1,27 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>shootingRange</title>
+</head>
+<body>
+	<button id='stt'>start</button>
+	<script type="text/javascript">
+      var sentence = "hello world";
+      function start(){
+          var text = '';
+          var timer;
+          var i = 0;
+          timer = setInterval(function(){
+            text += sentence[i];
+            console.log(text);
+            i ++;
+          },100);
+          setTimeout(function(){
+            clearInterval(timer);
+          },sentence.length*100);
+      };
+      stt.onclick = start;
+	</script>
+</body>
+</html>
