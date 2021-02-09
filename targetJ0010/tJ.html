@@ -1,0 +1,117 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>shootingRange</title>
+    <style type="text/css">
+*{margin: 0;padding: 0;}
+.leftBtNode{position: fixed;left: 0;bottom: 0;border: 1px solid #ccc;}
+.leftBtNode img{width: 200px;padding: 10px;}
+.leftBtNode .closed{width: 25px;height: 25px;
+position: absolute;right: 0;top: 0;
+background: white url(image/closed.png) no-repeat center center;
+background-size:20px 20px; cursor: pointer;
+}
+.rightTpNode{position: absolute;top: 10%;right: 0;border: 1px solid #ccc;}
+.rightTpNode img{height: 150px;padding: 10px;}
+.rightTpNode .closed{width: 25px;height: 25px;
+position: absolute;right: 0;top: 0;
+background: white url(image/closed.png) no-repeat center center;
+background-size:20px 20px; cursor: pointer;
+}
+
+.rightBtNode{position: fixed;bottom:0;right: 0;border: 1px solid #ccc;}
+.rightBtNode img{width: 200px;float: left;}
+.rightBtNode .closed{width: 25px;height: 25px;
+position: absolute;right: 0;top: 0;
+background: white url(image/closed.png) no-repeat center center;
+background-size:20px 20px; display: none;cursor: pointer;
+}
+
+.rightBtNode:hover .closed{display: block;}
+.rightBtNode .closed:hover{background-image:url(image/closed2.png); }
+
+input{margin: 20px;}
+
+    </style>
+    <script type="text/javascript">
+        /*
+        var leftBtNode = document.getElementById('leftBtNode');
+        var rightTpNode = document.getElementById('rightTpNode');
+        */
+
+        onload = function(){
+            //var a = function a(){
+            //    alert(1);
+            //};
+
+            closedlf.onclick = function(){
+                leftBtNode.style.display = 'none';
+            };
+
+            closedTp.onclick = function(){
+                rightTpNode.style.display = 'none';
+            };
+
+            closedRb.onclick = function(){
+                rightBtNode.style.display = 'none';
+            };
+
+            toOpen.onclick = function(){
+                leftBtNode.style.display = 'block';
+                rightTpNode.style.display = 'block';
+                rightBtNode.style.display = 'block';
+            };
+            toClosed.onclick = function(){
+                closedRb.onclick();
+                closedTp.onclick();
+                closedlf.onclick();
+            };
+
+            bgo.onclick = function(){
+                var needBaidu = open('http://www.baidu.com');
+            };
+
+            /*
+            function a(){
+                alert(1);
+            };
+            */
+
+            //a();
+
+
+            //console.log(leftBtNode);
+            /*
+            function ToN(obj){
+                //var obj = 'leftBtNode'
+                return document.getElementById(obj);
+            };
+
+            var leftBtNode = ToN('leftBtNode');
+
+            console.log(leftBtNode);
+            */
+        };
+
+    </script>
+</head>
+<body>
+    <input type="button" value="open all ads" id='toOpen'>
+    <input type="button" value="close all ads" id='toClosed'>
+    <div class='leftBtNode' id='leftBtNode'>
+        <div class='closed' id='closedlf'></div>
+        <img src="image/2.png">
+    </div>
+
+    <div class='rightTpNode' id='rightTpNode'>
+        <div class='closed' id='closedTp'></div>
+        <a href="http://www.baidu.com"><img src="image/123.png"></a>
+    </div>
+
+    <div class='rightBtNode' id='rightBtNode'>
+        <div class='closed' id='closedRb'></div>
+        <a id='bgo'><img src="image/LMX2019030604.png"></a>
+    </div>
+</body>
+</html>
