@@ -1,0 +1,55 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>shootingRange</title>
+    <style type="text/css">
+*{margin: 0;padding: 0;}
+#logo{position: absolute;left:0;right: 0;margin: 50px auto;} 
+.bt{width: 100%;position: fixed;bottom: 100px;text-align: center;}	
+.bt input{display: inline;margin: 0 50px;}
+
+    </style>
+    <script type="text/javascript">
+    	
+    	onload = function(){
+
+    		function toSet(href,src,width){
+    			needLink.href = href;
+    			logo.src = 'image/'+src;
+    			logo.style.width = width+'px';
+    		}
+
+    		toSet('https://baidu.com/','3.png',400);
+    		bd.onclick = function(){
+    			toSet('https://baidu.com/','3.png',400);
+    		};
+
+    		wy.onclick = function(){
+    			toSet('https://study.163.com/','2.jpeg',500);
+    			
+    		};
+
+    		edu.onclick = function(){
+    			toSet('https://edu.51cto.com/','1.jpeg',300);
+    		};
+
+    		jd.onclick = function(){
+    			toSet('https://jd.com/','4.jpg',350);
+    		};
+
+
+    	}
+
+    </script>
+</head>
+<body>
+    <a href="http://www.baidu.com" target="_blank" id='needLink'><img src="image/3.png" id="logo"></a>
+    <div class='bt'>
+       <input type="button" name="" value='baidu' id='bd'>
+       <input type="button" name="" value='Netease' id='wy'>
+       <input type="button" name="" value='51CTO' id='edu'>
+       <input type="button" name="" value='JD' id='jd'>
+    </div>
+</body>
+</html>
