@@ -38,6 +38,7 @@ Tips: Use screen.width, screen.height, screenLeft, screenTop, innerWidth, innerH
 **targetJ0011 ：** Click and change link
 
 **targetJ0012 ：** Create Unique Element
+Control element border width and color, control element color. Generate a customerized element.
 
 **targetJ0013 ：** Log in and check the status of the user name and password
 
