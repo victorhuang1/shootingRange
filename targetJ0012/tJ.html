@@ -1,0 +1,104 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+    	*{margin: 0;padding: 0;list-style: none;}
+    	ul{height: 150px;width: 100%;border-bottom: 1px dashed #ccc;}
+    	ul li{width: 20%;float: left;height: 100%;position: relative;text-align: center;}
+    	ul li .line{position: absolute;right: 0;height: 100%;width: 0;border-right: 1px dashed #ccc;}
+    	.needDiv{position: absolute;width: 100px;height: 100px;left: 0;right: 0;top: 0;bottom: 0;margin: auto;background: red;border: 1px solid black;}
+    	ul li .h{height: 30px;}
+    </style>
+</head>
+<body>
+	<ul>
+		<li>
+			<div class='line'></div>
+			<div class='h'></div>
+			Width:<input type="range" min="0" max="400" value="100" id='ipw'>
+			<br>
+			Height:<input type="range" min="0" max="400" value="100" id='iph'>
+		</li>
+		<li>
+			<div class='line'></div>
+			<div class='h'></div>
+			Left border width:<input type="range" id='iptl' min="0" max="100" value="1"><br>
+			Right border width:<input type="range" id='iptr' min="0" max="100" value="1"><br>
+			Upper border width:<input type="range" id='iptt' min="0" max="100" value="1"><br>
+			Lower border width:<input type="range" id='iptb' min="0" max="100" value="1">
+			
+		</li>
+		<li>
+			<div class='line'></div>
+			<div class='h'></div>
+			Left border color:<input type="color" id='iptlc'><br>
+			Right border color:<input type="color" id='iptrc'><br>
+			Upper border color:<input type="color" id='ipttc'><br>
+			Lower border color:<input type="color" id='iptbc'>
+		</li>
+		<li>
+			<div class='line'></div>
+			<div class='h'></div>
+			Element color:<input type="color" id='iptdomc'><br>
+		</li>
+		<li>
+			<div class='h'></div>
+			<input type="button" value='Generate unique element' id='createDom'>
+		</li>
+	</ul>
+	<div class='needDiv' id='needDiv'></div>
+	<script type="text/javascript">
+		function set(s,c){
+			needDiv.style[s]=c;
+		}
+
+		ipw.oninput = function(){
+			set('width',this.value+'px');
+		};
+		iph.oninput = function(){
+			set('height',this.value+'px');
+		};
+
+		iptl.oninput = function(){
+			set('border-left-width',this.value+'px');
+		};
+		iptr.oninput = function(){
+			set('border-right-width',this.value+'px');
+		};
+		iptt.oninput = function(){
+			set('border-top-width',this.value+'px');
+		};
+		iptb.oninput = function(){
+			set('border-bottom-width',this.value+'px');
+		};
+
+		iptlc.oninput = function(){
+			set('border-left-color',this.value);
+		};
+		iptrc.oninput = function(){
+			set('border-right-color',this.value);
+		};
+		ipttc.oninput = function(){
+			set('border-top-color',this.value);
+		};
+		iptbc.oninput = function(){
+			set('border-bottom-color',this.value);
+		};
+
+		iptdomc.oninput = function(){
+			set('background-color',this.value);
+		};
+
+
+		createDom.onclick = function(){
+			var newWin = open('http://baidu.com');
+			newWin.document.write('This is your customerized element:');
+			newWin.document.write('<div style="width: 100px;height: 100px;background: red;border: 1px solid black;width:'+ipw.value+'px;height:'+iph.value+'px;border-left-width:'+iptl.value+'px;border-right-width:'+iptr.value+'px;border-top-width:'+iptt.value+'px;border-bottom-width:'+iptb.value+'px;border-bottom-color:'+iptbc.value+';border-top-color:'+ipttc.value+';border-left-color:'+iptlc.value+';border-right-color:'+iptrc.value+';background:'+iptdomc.value+'"></div>');
+		};
+
+
+	</script>
+</body>
+</html>
