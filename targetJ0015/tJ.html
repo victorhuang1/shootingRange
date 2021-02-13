@@ -1,0 +1,72 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>shootingRange</title>
+</head>
+<body>
+	<input type="text" name="" id='text' maxlength="5">
+	<input type="button" name="" id='button' value="Check">
+	<script type="text/javascript">
+
+		function to(value){
+			if(value==" "){
+				return false;
+			}
+			else if(value == 0 || value == 1 || value == 2|| value[0] == 3|| value == 4|| value == 5|| value == 6|| value == 7|| value == 8|| value == 9){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		button.onclick = function(){
+			if(text.value.length == 0){
+				alert('Pls input a number');
+			}
+			else if(text.value.length == 1){
+				if(to(text.value[0])){
+					alert('ok，it is a pure number');
+				}
+				else{
+					alert('not a pure number');
+				}
+			}
+			else if(text.value.length == 2){
+				if(to(text.value[0])&&to(text.value[1])){
+					alert('ok，it is a pure number');
+				}
+				else{
+					alert('not a pure number');
+				}
+			}else if(text.value.length == 3){
+				if(to(text.value[0])&&to(text.value[1])&&to(text.value[2])){
+					alert('ok，it is a pure number');
+				}
+				else{
+					alert('not a pure number');
+				}
+			}else if(text.value.length == 4){
+				if(to(text.value[0])&&to(text.value[1])&&to(text.value[2])&&to(text.value[3])){
+					alert('ok，it is a pure number');
+				}
+				else{
+					alert('not a pure number');
+				}
+			}else if(text.value.length == 5){
+				if(to(text.value[0])&&to(text.value[1])&&to(text.value[2])&&to(text.value[3])&&to(text.value[4])){
+					alert('ok，it is a pure number');
+				}
+				else{
+					alert('not a pure number');
+				}
+			}
+			else{
+				alert('exceed max length')
+			}
+		};
+
+
+	</script>
+</body>
+</html>

@@ -43,6 +43,7 @@ Control element border width and color, control element color. Generate a custom
 **targetJ0013 ：** Log in and check the status of the username and password
 
 **targetJ0014 ：** Function Frame with Mask Layer
+Adjust a div element's width, height, color.
 
 **targetJ0015 ：** Making a Pure Numeral Input Box
 
