@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shootingRange</title>
+	<style type="text/css">
+	*{margin: 0;padding: 0;list-style: none;}	
+	p{padding: 20px;}
+	#needDiv{width: 100px;height: 100px;border: 5px solid black;margin-left:20px; }
+	.mask{position: fixed;height: 100%;width: 100%;background: rgba(0,0,0,0.4);left: 0;top: 0;display: none;}
+	.setting{width: 350px;height: 300px;border: 10px solid gray;position: fixed;right: 0;bottom: 0;z-index:10;background: white;display: none;}
+	.option{padding: 20px;}
+	.option span{display: inline-block;border: 1px solid black; padding: 5px;margin-left: 10px;cursor: pointer; }
+	.option span.r{background: red;}
+	.option span.y{background: yellow;}
+	.option span.g{background: green;}
+	.last{text-align: center;}
+
+	</style>
+</head>
+<body>
+	<p>Adjust below div element：<input type="button" name="" value="Adjust element" id='btn'></p>
+	<div id='needDiv'></div>
+	<div class='mask' id='mask'></div>
+	<div class='setting' id='setting'>
+		<div class='option'>
+			Background：
+			<span class='r' id='r'>Red</span>
+			<span class='y' id='y'>Yellow</span>
+			<span class='g' id='g'>Green</span>
+		</div>
+		<div class='option'>
+			Width：
+			<span>200</span>
+			<span>300</span>
+			<span>400</span>
+		</div>
+		<div class='option'>
+			Height：
+			<span>200</span>
+			<span>300</span>
+			<span>400</span>
+		</div>
+		<div class='option last'>
+			<span>Restore</span>
+			<span>Confirm</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function set(style,content){
+			needDiv.style[style] = content;
+		};
+		var allSpan = document.getElementsByTagName('span');
+		btn.onclick = function(){
+			mask.style.display = setting.style.display = 'block';
+		};
+
+		//Red button
+		allSpan[0].onclick = function(){
+			set('background','red');
+		};
+		//Yellow button
+		allSpan[1].onclick = function(){
+			set('background','yellow');
+		};
+		//Green button
+		allSpan[2].onclick = function(){
+			set('background','green');
+		};
+
+
+		allSpan[3].onclick = function(){
+			set('width','200px');
+		};
+		allSpan[4].onclick = function(){
+			set('width','300px');
+		};
+		allSpan[5].onclick = function(){
+			set('width','400px');
+		};
+
+		allSpan[6].onclick = function(){
+			set('height','200px');
+		};
+		allSpan[7].onclick = function(){
+			set('height','300px');
+		};
+		allSpan[8].onclick = function(){
+			set('height','400px');
+		};
+
+		allSpan[9].onclick = function(){
+			set('height','100px'),set('width','100px'),set('background','white');
+		};
+
+		allSpan[10].onclick = function(){
+			mask.style.display = setting.style.display = 'none';
+			//set('height','100px'),set('width','100px'),set('background','white');
+		};
+	</script>
+</body>
+</html>
