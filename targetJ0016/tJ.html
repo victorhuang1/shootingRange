@@ -1,0 +1,57 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>shootingRange</title>
+</head>
+<body>
+    <div id="output"></div>
+    <button onclick="to(1,10)">Check</button>
+	<script type="text/javascript">
+		
+		var num = 0;
+		var three = 0;
+		var text ='they are:';
+		var seven = 0;
+		var sevenText ='they are:'
+
+		function to(start,end){
+			start++; //6 10 // 7 10 //8 10 // 9 10 // 10 10
+			if(start%2==0){
+				//console.log(start);
+				num++;
+			};
+			if(start%3==0){
+				three++;
+				//text+=start+'、';
+				if(text.length == 9){
+					text+=start;
+				}
+				else{
+					text+='、'+start;
+				}
+			}
+			if(start%7==0){
+				seven++;
+				//text+=start+'、';
+				if(sevenText.length == 9){
+					sevenText+=start;
+				}
+				else{
+					sevenText+='、'+start;
+				}
+			}
+			//console.log(start);
+			if(start == end){
+                document.getElementById('output').innerHTML = 'There are <b>'+num+'</b> even numbers'+'<br>'+'There are <b>'
+                    +three+' </b>numbers than can be divided by three,'+text+'<br>'
+                    +'There are <b>'+seven+'</b> numbers that can be divided by seven,'+sevenText;
+				return;
+			}
+			to(start,end);
+		};
+
+	
+	</script>
+</body>
+</html>

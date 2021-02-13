@@ -46,8 +46,17 @@ Control element border width and color, control element color. Generate a custom
 Adjust a div element's width, height, color.
 
 **targetJ0015 ：** Making a Pure Numeral Input Box
+Check whether the input is a pure number or not.
 
 **targetJ0016 ：** Find functions related to content
+Write a to function that increments the start value (integer) and the end value (integer)
+And then print out how many even numbers there are and how many integers are divisible by 3 and how many integers are divisible by 7
+For example the to (1, 10);
+Print the value for
+The even numbers are 5, 2, 4, 6, 8, 10
+There are three numbers that are divisible by three: 3, 6, and 9
+There is one number that is divisible by seven, and they are 7
+
 
 **targetJ0017 ：** Control adding or removing elements
 
