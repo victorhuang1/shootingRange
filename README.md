@@ -10,8 +10,8 @@ A function is nested and call itself, or two functions are nested and call each 
 
 **targetJ0002 ：** How to make your visit volume reach 1W quickly? 
 
-**targetJ0003 ：** How to get the distance between the browser and the screen?
-Control the four variables to get the desired effect. 
+**targetJ0003 ：** How to get the distance between the browser and the screen?<br>
+Control the four variables to get the desired effect. <br>
 Tips: Use screen.width, screen.height, screenLeft, screenTop, innerWidth, innerHeight.
     window.screenY and window.screenTop both return the same result
     window.screenX and window.screenLeft both return the same result
@@ -48,14 +48,15 @@ Adjust a div element's width, height, color.
 **targetJ0015 ：** Making a Pure Numeral Input Box
 Check whether the input is a pure number or not.
 
-**targetJ0016 ：** Find functions related to content
+**targetJ0016 ：** Find functions related to content<br>
 Write a to function that increments the start value (integer) and the end value (integer)
 And then print out how many even numbers there are and how many integers are divisible by 3 and how many integers are divisible by 7
 For example the to (1, 10);
 Print the value for
 The even numbers are 5, 2, 4, 6, 8, 10
 There are three numbers that are divisible by three: 3, 6, and 9
-There is one number that is divisible by seven, and they are 7
+There is one number that is divisible by seven, and they are 7<br>
+Tips:using recursion.
 
 
 **targetJ0017 ：** Control adding or removing elements
