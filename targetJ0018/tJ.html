@@ -1,0 +1,60 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>shootingRange</title>
+    <style type="text/css">
+    	*{margin: 0;padding: 0;}
+    	li{height: 200px;border-bottom:1px dashed #ccc; }
+    	.left{float: left;width: 49.5%;border-right:1px dashed #ccc;height: 100%;position: relative;}
+    	.right{float: left;width: 49.5%;height: 100%;position: relative;}
+    	.left div{width: 50px;height: 50px;border: 1px solid black;position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;}
+    	.right button{position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;height: 20px;}
+    </style>
+
+</head>
+<body>
+
+	<ul>
+		<li>
+			<div class='left'>
+				<div id='one'></div>
+			</div>
+			<div class='right'>
+				<button id='btn'>Change</button>
+			</div>
+		</li>
+		<li>
+			<div class='left'>
+				<div id='one2'></div>
+			</div>
+			<div class='right'>
+				<button id='btn2'>Change</button>
+			</div>
+		</li>
+		<li>
+			<div class='left'>
+				<div id='one3'></div>
+			</div>
+			<div class='right'>
+				<button id='btn3'>Change</button>
+			</div>
+		</li>
+	</ul>
+	<script type="text/javascript">
+		btn.onclick = function(){
+			one.style.width = one.style.height = '100px';
+			one.style.background ='red';
+		};
+
+		btn2.onclick = function(){
+			one2.style.cssText = 'width:100px;height:100px;background:red';
+		};
+
+		btn3.onclick = function(){
+			one3.setAttribute('style','width:100px;height:100px;background:red');
+		};
+		
+	</script>
+</body>
+</html>
