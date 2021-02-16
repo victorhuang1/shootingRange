@@ -61,7 +61,11 @@ Tips:using recursion.
 
 **targetJ0017 ：** Control adding or removing elements
 
-**targetJ0018 ：** Use three different ways to style elements
+**targetJ0018 ：** Use three different ways to style elements<br>
+Tips:<br>
+1,one.style.width = one.style.height = '100px';one.style.background ='red';<br>
+2,one2.style.cssText = 'width:100px;height:100px;background:red';<br>
+3,one3.setAttribute('style','width:100px;height:100px;background:red');<br>
 
 **targetJ0019 ：** Tab Principle
 
