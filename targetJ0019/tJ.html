@@ -1,0 +1,43 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>shootingRange</title>
+    <style type="text/css">
+    	div{width: 100px;height: 100px;background: #ccc;border: 1px solid black;display: none;}
+    	input.active{background: yellow;}
+    	div.leo{display: block;}
+    </style>
+    
+</head>
+<body>
+	<input type="button" name="" value="1" class='active'>
+	<input type="button" name="" value="2">
+	<input type="button" name="" value="3">
+	<div class='leo'>1</div>
+	<div>2</div>
+	<div>3</div>
+	<script type="text/javascript">
+		var allInput = document.getElementsByTagName('input');
+		var allDiv = document.getElementsByTagName('div');
+		for(var i = 0;i < allInput.length;i++){
+			allInput[i].setAttribute('index',i);
+			allInput[i].onclick = function(){
+				//alert(i);
+				for(var j = 0;j < allInput.length;j++){
+					allInput[j].className = '';
+					allDiv[j].className = '';
+				};
+				this.className = 'active';
+				//allDiv[2].className = 'leo';
+				//console.log()
+				allDiv[this.getAttribute('index')].className='leo';
+			};
+		};
+
+
+
+
+	</script>
+</body>
+</html>
