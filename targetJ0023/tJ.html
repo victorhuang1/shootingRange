@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>shootingRange</title>
+    <style>
+                html, body, div, ul {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 569px;
+        }
+        h2 {
+            background: #2196f3;
+            color: white;
+            font-size: 16px;
+            line-height: 30px;
+            font-weight: bold;
+            vertical-align: middle;
+            text-indent: 20px;
+            margin: 0;
+        }
+        li {
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            line-height: 40px;
+        }
+        li p {
+            display: inline-block;
+            text-indent: 20px;
+            padding-right: 5px;
+            font-size: 16px;
+            color: gray;
+            line-height: 40px;
+            margin: 0;
+        }
+        li span {
+            color: #2196f3;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0 3px;
+            cursor: pointer;
+        }
+        img {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        input {
+            margin-left: 16px;
+            line-height: 22px;
+            vertical-align: middle;
+            font-size: 16px;
+            padding: 0 2px;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+   
+<style type="text/css">
+#__sound-pirate {
+  margin: 0 4px 4px 4px;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  width: 32px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483647;
+  cursor: pointer;
+  transition: left 1s ease; }
+  #__sound-pirate.__sound-pirate-at-left:hover .__sound-pirate-to-right {
+    display: block; }
+  #__sound-pirate.__sound-pirate-at-right:hover .__sound-pirate-to-left {
+    display: block; }
+  #__sound-pirate.__sound-pirate-at-right {
+    left: calc(100% - 32px - 4px); }
+  #__sound-pirate * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; }
+  #__sound-pirate .__sound-pirate-to-left, #__sound-pirate .__sound-pirate-to-right {
+    display: none;
+    position: absolute;
+    width: 14px;
+    top: 0; }
+  #__sound-pirate .__sound-pirate-to-left {
+    right: 100%; }
+  #__sound-pirate .__sound-pirate-to-right {
+    left: 100%; }
+  #__sound-pirate img {
+    display: block; }
+  #__sound-pirate .__sound-pirate-download {
+    display: block;
+    transform: rotate(0turn);
+    transition: transform 1s ease; }
+</style></head>
+<body>
+    <div>
+        <h2>Items</h2>
+        <ul>
+            <li>
+                <p class="">shootingRange-1st part</p>
+                <img src="./image/pen3.png" alt="pen" class="">
+                <input type="text" value="" class="hide">
+                <span class="hide save">Save</span>
+                <span class="hide cancel">Cancel</span>
+                <span class="hide detach">Delete</span>
+            </li>
+            <li>
+                <p class="">shootingRange-2nd part</p>
+                <img src="./image/pen3.png" alt="pen" class="">
+                <input type="text" value="" class="hide">
+                <span class="hide save">Save</span>
+                <span class="hide cancel">Cancel</span>
+                <span class="hide detach">Delete</span>
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var allImage = document.getElementsByTagName('img');
+        var allSave = document.getElementsByClassName('save');
+        var allCancel = document.getElementsByClassName('cancel');
+        var allDetach = document.getElementsByClassName('detach');
+
+        //Pen button
+        for(var i = 0;i < allImage.length;i++){
+            allImage[i].onclick = function(){
+                //alert(1);
+                //p tag
+                this.parentNode.children[0].className = 'hide';
+                //image tag
+                this.className = 'hide';
+                //input tag
+                this.parentNode.children[2].className = '';
+                this.parentNode.children[2].value = this.parentNode.children[0].innerHTML;
+                //all span tag
+                var allSpan = this.parentNode.getElementsByTagName('span');
+                for(var j = 0;j < allSpan.length;j++){
+                    allSpan[j].className = '';
+                }
+
+            };
+        };
+
+        //Save button
+        for(var i = 0;i < allSave.length;i++){
+            allSave[i].onclick = function(){
+                if(this.parentNode.children[2].value == ''){
+                    alert('Pls input text');
+                    return;
+                }
+                //alert(1);
+                this.parentNode.children[0].innerHTML = this.parentNode.children[2].value;
+                var allSpan = this.parentNode.getElementsByTagName('span');
+                for(var j = 0;j < allSpan.length;j++){
+                    allSpan[j].className = 'hide';
+                }
+                //input tag
+                this.parentNode.children[2].className = 'hide';
+                //p tag
+                this.parentNode.children[0].className = '';
+                //image tag
+                this.parentNode.children[1].className = '';
+            }
+        };
+
+        //cancel tag
+        for(var i = 0;i < allCancel.length;i++){
+            allCancel[i].onclick = function(){
+
+            
+                var allSpan = this.parentNode.getElementsByTagName('span');
+                for(var j = 0;j < allSpan.length;j++){
+                    allSpan[j].className = 'hide';
+                }
+                //input tag
+                this.parentNode.children[2].className = 'hide';
+                //p tag
+                this.parentNode.children[0].className = '';
+                //image tag
+                this.parentNode.children[1].className = '';
+            }
+        };
+
+
+        //delete tag
+        for(var i = 0;i < allDetach.length;i++){
+            allDetach[i].onclick = function(){
+                if(confirm('Do you confirm to cancel?')){
+                   this.parentNode.remove();
+                }
+            }
+        };
+
+
+    </script>
+
+
+
+
+
+</body></html>
