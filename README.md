@@ -79,7 +79,9 @@ Tips:<br>
 
 **targetJ0024 ：** Creating All Colors
 
-**targetJ0025 ：** Simulation SMS sending effect
+**targetJ0025 ：** Simulation SMS sending effect<br>
+Tips:<br>
+Stimulate two people chatting in a phone app.
 
 **targetJ0026 ：** Basic grading effect
 
