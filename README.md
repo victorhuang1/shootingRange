@@ -109,7 +109,9 @@ Stimulate two people chatting in a phone app.
 
 **targetJ0038 ：** 360 degree vehicle display effect
 
-**targetJ0039 ：** JS array exercise analysis
+**targetJ0039 ：** JS array exercise<br>
+Tips:<br>
+1,sum;2,remove all item 0;3,remove duplicated item;4,find the largest item;
 
 **targetJ0040 ：** Shopping Cart Effect
 
