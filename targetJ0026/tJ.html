@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>shootingRange</title>
+<link href="leo_style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#pingfen .cg {background:url(icons@2x.png) no-repeat 0 -60px; }
+</style>
+
+</head>
+
+<body>
+<div id="pingfen">
+	<ul>
+    	<li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script type="text/javascript">
+	
+	var allLi = document.getElementsByTagName('li');
+
+
+	for(var i = 0;i < allLi.length;i++){
+		allLi[i].index = i;
+		allLi[i].onmouseover = function(){
+			for(var i = 0;i < allLi.length;i++){
+				allLi[i].className = '';
+			}
+			for(var i = 0;i <= this.index;i++){
+				allLi[i].className = 'cg';
+			}
+			//this.className = 'cg'
+		}
+		allLi[i].onclick = function(){
+			alert('Thank you for your review, you have marked '+(this.index+1)+' stars');
+			for(var j = 0;j < allLi.length;j++){
+				allLi[j].onmouseover = null;
+				allLi[j].onclick = function(){
+					alert('You have finished your review, thank you for your time')
+				}
+			}
+		}
+	}
+
+
+/*
+	allLi[0].onmouseout = function(){
+		this.className = '';
+	}
+*/
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+*{margin:0;padding:0;}
+#pingfen{ width:300px;margin:60px auto;height:60px;}
+#pingfen li{ width:60px;float:left;height:60px; cursor:pointer;background:url(icons@2x.png) no-repeat 0 0; list-style:none;}
