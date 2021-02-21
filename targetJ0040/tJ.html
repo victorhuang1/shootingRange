@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+  *{list-style: none;}
+  #outerNode{width: 500px;height: 500px;position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin:auto;border: 1px solid black;box-shadow: 0 0 5px black;background:#e0e0e0;}
+  #list{margin-top: 100px;}
+  p{text-align: center;margin-top: 200px;}
+</style>
+<title>shootingRange</title>
+
+</head>
+
+<body>
+<div id='outerNode'>
+<ul id="list">
+	<li>
+    咖啡
+  	<input type="button" value="-">
+    <strong>0</strong>
+  	<input type="button" value="+">
+    单价：<em>12.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+    蛋卷
+  	<input type="button" value="-">
+    <strong>0</strong>
+  	<input type="button" value="+">
+    单价：<em>10.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+    卤煮
+  	<input type="button" value="-">
+    <strong>0</strong>
+  	<input type="button" value="+">
+    单价：<em>8.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+    鸡蛋
+  	<input type="button" value="-">
+    <strong>0</strong>
+  	<input type="button" value="+">
+    单价：<em>8元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+    饭团
+  	<input type="button" value="-">
+    <strong>0</strong>
+  	<input type="button" value="+">
+    单价：<em>14.5元</em>
+    小计：<span>0元</span>
+  </li>
+</ul>
+
+<p id='p'>商品合计共：0件，共花费了：0元<br>其中最贵的商品单价是：0元。</p>
+</div>
+<script type="text/javascript">
+  var allInput = document.getElementsByTagName('input');
+  var allSg = document.getElementsByTagName('strong');
+  var allPNum = 0;
+  var allMoney = 0;
+  var arr = [];
+  for(var i = 0; i< allInput.length;i++){
+    allInput[i].onclick = function(){
+      var stg = this.parentNode.children[1];
+      var em = this.parentNode.children[3];
+      //单价
+      var needNum = em.innerHTML.slice(0,-1);
+      var allNum = this.parentNode.children[4]
+      if(this.value == '+'){
+        //alert('+')
+        //console.log();
+        stg.innerHTML = Number(stg.innerHTML) + 1;
+        allPNum++;
+        allMoney+=Number(needNum);
+      }
+      else{
+        if(stg.innerHTML == '0')return;
+        stg.innerHTML = Number(stg.innerHTML) - 1;
+        allPNum--;
+        allMoney-=Number(needNum);
+      }
+      allNum.innerHTML = needNum * stg.innerHTML + '元';
+
+      arr = [];
+      for(var i = 0; i<allSg.length;i++){
+        if(allSg[i].innerHTML!='0'){
+
+          arr.push(Number(allSg[i].parentNode.children[3].innerHTML.slice(0,-1)))
+          //console.log(allSg[i].innerHTML);
+        }
+      }
+     // console.log(arr);
+     //console.log()
+     if(arr.length == 0){
+       var newArr = 0
+     }
+     else{
+       var newArr = arr.sort(function(a,b){
+        return b-a;
+       })[0];
+     }
+    
+
+
+      p.innerHTML = '商品合计共：'+allPNum+'件，共花费了：'+allMoney+'元<br>其中最贵的商品单价是：'+newArr+'元。';
+
+
+
+
+    };
+  };
+
+
+
+</script>
+
+
+</body></html>
