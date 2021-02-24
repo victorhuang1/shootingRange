@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width">
+    <link href="verifyCode.css" rel="stylesheet">
+    <title>shootingRange</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        #codeDiv{
+            margin: 0 auto;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--
+    verify_code_char_input_state_action
+    disabled
+    -->
+    <div id="codeDiv" align="center">
+        <div class="verify_code_char">
+            <input class="verify_code_char_input" maxlength="1" >
+        </div>
+        <div class="verify_code_char">
+            <input class="verify_code_char_input"  maxlength="1">
+        </div>
+        <div class="verify_code_char">
+            <input class="verify_code_char_input" maxlength="1" >
+        </div>
+        <div class="verify_code_char">
+            <input class="verify_code_char_input" maxlength="1" >
+        </div>
+        <div class="verify_code_char">
+            <input class="verify_code_char_input" maxlength="1" >
+        </div>
+        <div class="verify_code_char">
+            <input class="verify_code_char_input" maxlength="1" >
+        </div>
+    </div>
+    <script type="text/javascript">
+        var allInput = document.getElementsByTagName('input');
+        function toDis(){
+            var m = false;
+            for(var i = 0;i < allInput.length;i++){
+                if(allInput[i].value==''){
+                    m=true;
+                }
+            };
+
+            if(!m){
+                for(var i = 0;i < allInput.length;i++){
+                    allInput[i].setAttribute('disabled','')
+                    allInput[i].className = 'verify_code_char_input';
+                }
+            }
+        }
+        for(var i = 0;i < allInput.length;i++){
+            allInput[i].index = i;
+            allInput[i].onblur = function(){
+                for(var j = 0;j < allInput.length;j++){
+                    allInput[j].className = 'verify_code_char_input';
+                };
+            };
+            allInput[i].onmousedown = function(){
+                for(var j = 0;j < allInput.length;j++){
+                    allInput[j].className = 'verify_code_char_input';
+                };
+                this.className = 'verify_code_char_input verify_code_char_input_state_action';
+            };
+            allInput[i].onkeydown = function(){
+                var _this = this;
+               // console.log(event.keyCode)
+
+                if(event.keyCode==8){
+                    if(allInput[_this.index-1]){
+                        allInput[_this.index-1].focus();
+                        allInput[_this.index-1].value = '';
+                        for(var j = 0;j < allInput.length;j++){
+                            allInput[j].className = 'verify_code_char_input';
+                        };
+                        allInput[_this.index - 1].className = 'verify_code_char_input verify_code_char_input_state_action';
+                    }
+                }
+                if(event.keyCode<48 || event.keyCode>57){
+                    return false;
+                }
+                setTimeout(function(){
+                    if(allInput[_this.index + 1]){
+                        for(var j = 0;j < allInput.length;j++){
+                            allInput[j].className = 'verify_code_char_input';
+                        };
+                        allInput[_this.index + 1].focus();
+                        allInput[_this.index + 1].className = 'verify_code_char_input verify_code_char_input_state_action';
+                    }
+                    else{
+                        _this.blur();
+                        allInput[_this.index].className = 'verify_code_char_input';
+                    }
+                    toDis()
+                },10);
+               
+            };
+        };
+    </script>
+</body>
+</html>
