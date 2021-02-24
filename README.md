@@ -121,6 +121,7 @@ Tips:<br>
 
 **targetJ0043 ：** Suction top bar effect
 
-**targetJ0044 ：** Password effect of mobile phone payment
+**targetJ0044 ：** Password effect of mobile phone payment<br>
+Tips: Input numbers
 
 **targetJ0045 ：** Webpage raffle effect
