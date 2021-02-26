@@ -122,6 +122,8 @@ Tips:<br>
 **targetJ0043 ：** Suction top bar effect
 
 **targetJ0044 ：** Password effect of mobile phone payment<br>
-Tips: Input numbers
+Tips: Input numberszzzzzzzzz
 
-**targetJ0045 ：** Webpage raffle effect
+**targetJ0045 ：** Webpage raffle 
+
+Records: Laptop not work Feb 25,2021
