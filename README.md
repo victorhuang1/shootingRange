@@ -125,5 +125,6 @@ Tips:<br>
 Tips: Input numberszzzzzzzzz
 
 **targetJ0045 ：** Webpage raffle 
+Tips: Rotate the chosen status and finalised at last.
 
 Records: Laptop not work Feb 25,2021
